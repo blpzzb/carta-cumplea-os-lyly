@@ -1,10 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, type RefObject } from "react";
 import { Heart, Pause, Play, ChevronDown } from "lucide-react";
-import hug from "@/assets/1000069735.jpg.asset.json";
-import trio from "@/assets/1000069734.gif.asset.json";
-import support from "@/assets/1000069733.jpg.asset.json";
-import song from "@/assets/cancion.mp3.asset.json";
 import { letterParagraphs } from "@/lib/letter";
 import { playBirthdayMusic } from "@/lib/birthday-music";
 import { AnimatedBackground, Letters, Reveal, SectionTitle, launchConfetti, useSparkles, type V } from "@/components/cute";
@@ -25,9 +21,9 @@ export const Route = createFileRoute("/")({
 });
 
 const memories = [
-  { img: hug.url, r: "-1.5deg", title: "Cuando nos reíamos", text: "Cada que podíamos encontrábamos la forma de divertirnos y hacernos la vida más ligera con nuestra simple compañía." },
-  { img: trio.url, r: "1.5deg", title: "Nuestro trío", text: "Los tres con el Luka, entre tonteras y momentos raros, armábamos un caos que se sentía como hogar." },
-  { img: support.url, r: "-1deg", title: "Ahí para el otro", text: "Estar ahí cuando más pesaba el mundo, sabiendo que podíamos contar el uno con el otro." },
+  { img: "/1000069735.jpg", r: "-1.5deg", title: "Cuando nos reíamos", text: "Cada que podíamos encontrábamos la forma de divertirnos y hacernos la vida más ligera con nuestra simple compañía." },
+  { img: "/1000069734.gif", r: "1.5deg", title: "Nuestro trío", text: "Los tres con el Luka, entre tonteras y momentos raros, armábamos un caos que se sentía como hogar." },
+  { img: "/1000069733.jpg", r: "-1deg", title: "Ahí para el otro", text: "Estar ahí cuando más pesaba el mundo, sabiendo que podíamos contar el uno con el otro." },
 ];
 
 function Intro({ onOpen }: { onOpen: () => void }) {
@@ -81,7 +77,7 @@ function Page() {
   return (
     <main className="relative min-h-screen">
       <AnimatedBackground />
-      <audio ref={audio} src={song.url} loop preload="auto" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+      <audio ref={audio} src="/cancion.mp3" loop preload="auto" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
       {!started && <Intro onOpen={open} />}
       {started && (
         <>
