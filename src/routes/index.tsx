@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
 
 const memories = [
   { img: "/1000069735.jpg", r: "-1.5deg", title: "Cuando nos reíamos", text: "Cada que podíamos encontrábamos la forma de divertirnos y hacernos la vida más ligera con nuestra simple compañía." },
-  { img: "/1000069734.gif", r: "1.5deg", title: "Nuestro trío", text: "Los tres con el Luka, entre tonteras y momentos raros, armábamos un caos que se sentía como hogar." },
+  { img: "/1000069734.gif", r: "1.5deg", title: "Nuestro trío", text: "Los tres con Luka (el pendejo), entre tonteras y momentos raros, armábamos un caos que se sentía como hogar." },
   { img: "/1000069733.jpg", r: "-1deg", title: "Ahí para el otro", text: "Estar ahí cuando más pesaba el mundo, sabiendo que podíamos contar el uno con el otro." },
 ];
 
