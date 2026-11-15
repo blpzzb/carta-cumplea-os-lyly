@@ -10,7 +10,7 @@ export function Reveal({ children, className = "", delay = 0 }: { children: Reac
     n.classList.add("pending");
     const o = new IntersectionObserver(([e]) => {
       if (e?.isIntersecting) { setTimeout(() => n.classList.remove("pending"), delay); o.disconnect(); }
-    }, { threshold: 0.12 });
+    }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
     o.observe(n);
     return () => o.disconnect();
   }, [delay]);

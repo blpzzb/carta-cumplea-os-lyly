@@ -6,22 +6,15 @@ export function Countdown() {
   const [t, setT] = useState<string | null>(null);
   useEffect(() => {
     const tick = () => {
-      // Fecha objetivo: 16 de noviembre de 2026 a las 00:00:00
-      const target = new Date("2026-11-16T00:00:00");
-      const d = new Date();
-      const s = Math.max(0, Math.floor((target.getTime() - d.getTime()) / 1000));
-      
-      const hours = Math.floor(s / 3600);
-      const minutes = Math.floor((s % 3600) / 60);
-      const seconds = s % 60;
-      
-      setT([hours, minutes, seconds].map((n) => String(n).padStart(2, "0")).join(" : "));
+      const d = new Date(); const end = new Date(d); end.setHours(24, 0, 0, 0);
+      const s = Math.max(0, Math.floor((end.getTime() - d.getTime()) / 1000));
+      setT([Math.floor(s / 3600), Math.floor((s % 3600) / 60), s % 60].map((n) => String(n).padStart(2, "0")).join(" : "));
     };
     tick(); const id = setInterval(tick, 1000); return () => clearInterval(id);
   }, []);
   return (
     <div className="text-center">
-      <p className="eyebrow">faltan para tu cumpleaños</p>
+      <p className="eyebrow">lo que queda de tu día</p>
       <p className="mt-2 font-serif text-3xl tabular-nums tracking-widest text-gold">{t ?? "-- : -- : --"}</p>
     </div>
   );
