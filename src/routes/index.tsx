@@ -31,7 +31,7 @@ function Intro({ onOpen }: { onOpen: () => void }) {
   return (
     <div className={`fixed inset-0 z-40 grid place-items-center px-6 ${open ? "intro-out" : ""}`}>
       <div className="flex flex-col items-center text-center">
-        <p className="eyebrow rise">14 · noviembre</p>
+        <p className="eyebrow rise">16 · noviembre</p>
         <p className="rise mt-4 font-serif text-2xl italic text-muted-foreground" style={{ "--delay": ".2s" } as V}>llegó algo para ti</p>
         <div className="float rise mt-12" style={{ "--delay": ".4s" } as V}>
           <div className={`env ${open ? "open" : ""}`}>
